@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandhiya Jaikumar | Data Analyst</title>
+<meta name="description" content="Data Analyst portfolio: SQL, Snowflake, BigQuery, Tableau, Power BI and Python. Executive dashboards, customer analytics and end-to-end projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1E1E1E;
+    --card: #2A2A28;
+    --line: #3A3A38;
+    --text: #F2F2F0;
+    --muted: #B4B2A9;
+    --faint: #888780;
+    --blue: #378ADD;
+    --blue-light: #85B7EB;
+    --blue-deep: #0C447C;
+    --blue-pale: #B5D4F4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  a { color: var(--blue-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(30, 30, 30, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+  nav .name { font-weight: 600; font-size: 17px; color: var(--text); }
+  nav .links a { color: var(--muted); font-size: 14px; margin-left: 22px; }
+  nav .links a:hover { color: var(--text); text-decoration: none; }
+
+  header { padding: 80px 0 64px; }
+  .eyebrow { color: var(--blue-light); font-size: 14px; font-weight: 500; margin-bottom: 12px; }
+  h1 { font-size: 44px; line-height: 1.15; font-weight: 600; max-width: 760px; margin-bottom: 18px; }
+  .lead { color: var(--muted); font-size: 18px; max-width: 680px; margin-bottom: 30px; }
+  .btn {
+    display: inline-block; padding: 11px 20px; border-radius: 8px;
+    font-size: 15px; font-weight: 500; margin: 0 10px 10px 0;
+  }
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-ghost { border: 1px solid var(--faint); color: var(--text); }
+  .btn:hover { text-decoration: none; opacity: 0.9; }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  .section-title { color: var(--blue-light); font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 24px; }
+
+  .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .card { background: var(--card); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+  .thumb { display: block; aspect-ratio: 16 / 10; background: #161616; overflow: hidden; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .thumb-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .card-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+  .card h3 { font-size: 19px; font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
+  .card p { color: var(--muted); font-size: 15px; margin-bottom: 14px; }
+  .card ul { color: var(--muted); font-size: 14.5px; margin: 0 0 16px 18px; }
+  .card li { margin-bottom: 6px; }
+  .card li strong { color: var(--text); font-weight: 500; }
+  .chips { margin-bottom: 16px; }
+  .chip {
+    display: inline-block; font-size: 12.5px; background: var(--blue-deep); color: var(--blue-pale);
+    padding: 3px 10px; border-radius: 6px; margin: 0 6px 6px 0;
+  }
+  .card-links { margin-top: auto; font-size: 14.5px; font-weight: 500; }
+  .card-links a { margin-right: 18px; }
+  .more { color: var(--faint); font-size: 14px; margin-top: 20px; }
+
+  .skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .skill-group { background: var(--card); border-radius: 12px; padding: 20px 22px; }
+  .skill-group h4 { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin-bottom: 32px; }
+  .stat { background: var(--card); border-radius: 12px; padding: 20px; }
+  .stat .num { font-size: 30px; font-weight: 600; line-height: 1.2; }
+  .stat .label { color: var(--muted); font-size: 14px; }
+  .job { margin-bottom: 22px; }
+  .job-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 6px; }
+  .job-head strong { font-weight: 600; }
+  .job-head span { color: var(--faint); font-size: 14px; }
+  .job ul { color: var(--muted); font-size: 15px; margin-left: 18px; }
+  .job li { margin-bottom: 4px; }
+
+  .contact { text-align: center; }
+  .contact h2 { font-size: 28px; font-weight: 600; margin-bottom: 10px; }
+  .contact p { color: var(--muted); margin-bottom: 24px; }
+
+  footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--faint); font-size: 13px; text-align: center; }
+
+  @media (max-width: 760px) {
+    nav .name { font-size: 15px; white-space: nowrap; }
+    nav .links { white-space: nowrap; }
+    nav .links a { margin-left: 16px; font-size: 14px; }
+    nav .links .hide-sm { display: none; }
+    header { padding: 52px 0 44px; }
+    h1 { font-size: 32px; }
+    .lead { font-size: 16px; }
+    .projects, .skills { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="name" href="#top">Sandhiya Jaikumar</a>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="#skills" class="hide-sm">Skills</a>
+      <a href="#experience" class="hide-sm">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <p class="eyebrow">Data Analyst · Business Intelligence</p>
+    <h1>I turn raw data into dashboards and decisions leaders trust.</h1>
+    <p class="lead">3+ years building executive Tableau dashboards and Snowflake SQL workflows for C-suite, Sales and Client Success teams. MS in Business Analytics from the University of Utah's David Eccles School of Business.</p>
+    <a class="btn btn-primary" href="#projects">View projects</a>
+    <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">Download resume</a>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <p class="section-title">Projects</p>
+    <div class="projects">
+
+      <article class="card">
+        <a class="thumb" href="https://public.tableau.com/app/profile/sandhiya3216/viz/OnlineRetail-CustomerRetentionRevenue/CustomerRetentionRevenue" target="_blank" rel="noopener">
+          <img src="dashboard.png" alt="Customer retention and revenue dashboard in Tableau">
+        </a>
+        <div class="card-body">
+          <h3>Customer Retention &amp; Revenue Analytics</h3>
+          <p>Which customers drive revenue, are we keeping them, and where should sales focus next quarter?</p>
+          <ul>
+            <li>Cleaned and modeled <strong>1M+ real retail transactions</strong> in BigQuery SQL, with totals reconciled across every layer</li>
+            <li>Found retention held steady while <strong>new-customer acquisition fell 49–66%</strong></li>
+            <li>Sized a <strong>£94k–£281k win-back opportunity</strong> and designed a controlled test</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">BigQuery SQL</span><span class="chip">Tableau</span><span class="chip">Cohort analysis</span><span class="chip">RFM</span>
+          </div>
+          <div class="card-links">
+            <a href="https://public.tableau.com/app/profile/sandhiya3216/viz/OnlineRetail-CustomerRetentionRevenue/CustomerRetentionRevenue" target="_blank" rel="noopener">Dashboard</a>
+            <a href="https://github.com/Sandhiya-Jaikumar/online-retail-analytics" target="_blank" rel="noopener">Code</a>
+            <a href="https://github.com/Sandhiya-Jaikumar/online-retail-analytics/blob/main/docs/executive_memo.pdf" target="_blank" rel="noopener">Executive memo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="thumb" href="https://public.tableau.com/app/profile/sandhiya3216" target="_blank" rel="noopener">
+          <div class="thumb-placeholder">
+            <svg viewBox="0 0 320 200" width="70%" aria-hidden="true">
+              <rect x="20" y="120" width="34" height="60" fill="#888780"/>
+              <rect x="66" y="80" width="34" height="100" fill="#378ADD"/>
+              <rect x="112" y="100" width="34" height="80" fill="#888780"/>
+              <rect x="158" y="50" width="34" height="130" fill="#378ADD"/>
+              <rect x="204" y="90" width="34" height="90" fill="#888780"/>
+              <rect x="250" y="30" width="34" height="150" fill="#378ADD"/>
+              <line x1="10" y1="181" x2="300" y2="181" stroke="#3A3A38" stroke-width="2"/>
+            </svg>
+          </div>
+        </a>
+        <div class="card-body">
+          <h3>Customer Profitability &amp; Sales Forecasting</h3>
+          <p>MSBA capstone for Swire Coca-Cola: which customers are most profitable, and what drives sales?</p>
+          <ul>
+            <li>Built a <strong>Random Forest model explaining ~81% of variance</strong> in sales</li>
+            <li>Profiled profitability by geography, product mix and customer type to find high-margin, discount-sensitive segments</li>
+            <li>Delivered a <strong>self-serve Tableau dashboard</strong> for Swire Coca-Cola teams</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">R</span><span class="chip">Tableau</span><span class="chip">Random Forest</span><span class="chip">Segmentation</span>
+          </div>
+          <div class="card-links">
+            <a href="https://public.tableau.com/app/profile/sandhiya3216" target="_blank" rel="noopener">Dashboard</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <p class="more">More projects are on the way, each covering the full workflow from business question to recommendation.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <p class="section-title">Skills</p>
+    <div class="skills">
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Scikit-learn</span><span class="chip">R</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Data platforms</h4>
+        <div class="chips"><span class="chip">Snowflake</span><span class="chip">BigQuery</span><span class="chip">Oracle</span><span class="chip">SQL Server</span><span class="chip">PostgreSQL</span><span class="chip">Databricks</span><span class="chip">SSIS</span><span class="chip">Azure</span><span class="chip">AWS</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>BI and methods</h4>
+        <div class="chips"><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">SSRS</span><span class="chip">Excel</span><span class="chip">KPI design</span><span class="chip">Data modeling</span><span class="chip">A/B testing</span><span class="chip">Forecasting</span><span class="chip">Segmentation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <p class="section-title">Experience</p>
+    <div class="stats">
+      <div class="stat"><div class="num">36M+</div><div class="label">events a year in C-suite Tableau dashboards</div></div>
+      <div class="stat"><div class="num">200+</div><div class="label">clients covered by a renewals dashboard</div></div>
+      <div class="stat"><div class="num">20+</div><div class="label">teams using dashboards fed by my SQL workflows</div></div>
+      <div class="stat"><div class="num">~75%</div><div class="label">fewer HR reporting errors after a rebuild</div></div>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><strong>Business Systems Analyst · O.C. Tanner</strong><span>Dec 2023 – Nov 2026 · Salt Lake City, UT</span></div>
+      <ul>
+        <li>Built and owned two C-suite Tableau dashboards, including a view of 36M+ recognition events a year, saving ~6 hours/week of executive-deck prep</li>
+        <li>Built an expiring-agreements dashboard across 200+ clients, surfacing ~50 renewals per quarter and shifting Sales and Client Success to proactive renewals</li>
+        <li>Architected Snowflake SQL workflows feeding 10+ Tableau dashboards used by 20+ teams, eliminating ~8 hours/week of manual prep</li>
+        <li>Owned CSAT/NPS and sentiment analysis for the Voice of the Customer program, presented at a company-wide executive meeting</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><strong>Data and Reporting Analyst Intern · Utah Transit Authority</strong><span>Sep 2022 – Apr 2023 · Salt Lake City, UT</span></div>
+      <ul>
+        <li>Reduced HR reporting errors by ~75% by rebuilding SSRS reports on T-SQL with built-in validation</li>
+        <li>Built Power BI dashboards with custom KPIs to analyze ridership data for leaders across the organization</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>Open to Data Analyst and BI Analyst roles.</p>
+    <a class="btn btn-primary" href="mailto:sandhiyajai2022@outlook.com">Email me</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/sandhiya-jai" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn btn-ghost" href="https://github.com/Sandhiya-Jaikumar" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn btn-ghost" href="https://public.tableau.com/app/profile/sandhiya3216" target="_blank" rel="noopener">Tableau Public</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Sandhiya Jaikumar · Built with HTML and CSS, hosted on GitHub Pages</div>
+</footer>
+
+</body>
+</html>
